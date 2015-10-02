@@ -14,6 +14,6 @@
 
 class cisco_demo::demo_profile::base {
   include cisco_demo::install
-  include cisco_demo::demo_repo
-  include cisco_demo::demo_cisco_patch_rpm
+  #include cisco_demo::demo_repo
+  #include cisco_demo::demo_cisco_patch_rpm
 }

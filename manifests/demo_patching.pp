@@ -25,12 +25,12 @@ class cisco_demo::demo_patching {
     'RedHat': {    # GuestShell
       # GS/Centos: systemd services
       $svcDemoTarget = '/usr/lib/systemd/system/demo-one.service'
-      $svcDemoSource = 'puppet:///modules/cisco_demo/demo-one.service'
+      $svcDemoSource = 'puppet:///modules/ciscopuppet/demo-one.service'
     }
     'cisco-wrlinux':  {    # Native
       # Native/WRL: init.d services
       $svcDemoTarget = '/etc/init.d/demo-one'
-      $svcDemoSource = 'puppet:///modules/cisco_demo/demo-one.initd'
+      $svcDemoSource = 'puppet:///modules/ciscopuppet/demo-one.initd'
     }
     default:  { fail("## UNRECOGNIZED OSFAMILY: ${::osfamily}")
     }
@@ -39,7 +39,7 @@ class cisco_demo::demo_patching {
   #Use Case 1: install cisco package
 
   $ciscoPatchName = 'n9000_sample-1.0.0-7.0.3.x86_64.rpm'
-  $ciscoPatchSource = "puppet:///modules/cisco_demo/${ciscoPatchName}"
+  $ciscoPatchSource = "puppet:///modules/ciscopuppet/${ciscoPatchName}"
   $ciscoPatchFile = "/bootflash/${ciscoPatchName}"
 
   file { $ciscoPatchFile :

@@ -27,6 +27,6 @@
 
 class cisco_demo::demo_role::internal_switch inherits cisco_demo::demo_role {
   include cisco_demo::demo_profile::igp
-  include cisco_demo::demo_profile::monitoring_app
+  #include cisco_demo::demo_profile::monitoring_app
   include cisco_demo::demo_profile::interface_vlan_vtp
 }
